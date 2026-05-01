@@ -4,13 +4,13 @@
   /* PRIMARY (Dark Navy Backgrounds) */
   --color-primary-100: #d1d9e2;
   --color-primary-400: #3b5a7d;
-  --color-primary-500: #10263F; /* Your Card Color */
-  --color-primary-900: #0B1A2B; /* Your Main Background */
+  --color-primary-500: #10263f; /* Your Card Color */
+  --color-primary-900: #0b1a2b; /* Your Main Background */
 
   /* ACCENT & GLOW (Chidori / Sharingan Blues) */
-  --color-accent-400: #3B82F6; /* Your Glow */
-  --color-accent-500: #2563EB; /* Your Hover */
-  --color-accent-600: #1E3A8A; /* Your Button */
+  --color-accent-400: #3b82f6; /* Your Glow */
+  --color-accent-500: #2563eb; /* Your Hover */
+  --color-accent-600: #1e3a8a; /* Your Button */
 
   /* SHADOWS */
   --shadow-neon: 0 0 15px rgba(59, 130, 246, 0.5);
@@ -20,6 +20,11 @@
     border-width: 2px;
     border-style: solid;
     /* This creates a gradient from transparent (top) to your accent color (bottom) */
-    border-image: linear-gradient(to bottom, transparent, var(--color-accent-600)) 1;
+    border-image: linear-gradient(
+        to bottom,
+        transparent,
+        var(--color-accent-600)
+      )
+      1;
   }
 }

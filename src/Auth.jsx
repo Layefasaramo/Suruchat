@@ -1,12 +1,20 @@
 import { useState } from 'react'
 import { supabase } from './supabaseClient'
 import background from './assets/background.png'
-import { User, Lock, Eye, EyeOff } from 'lucide-react';
-
+import { User, Lock, Mail, Eye, EyeOff } from 'lucide-react';
+export const handleLogout = async () => {
+  const { error } = await supabase.auth.signOut();
+  if (error) {
+    console.error("Error signing out:", error.message);
+  } else {
+    // Optional: Force a refresh to clear all state
+    window.location.reload();
+  }
+};
 export default function Auth() {
   const [loading, setLoading] = useState(false)
   const [email, setEmail] = useState('')
-  const [username, setUsername] = useState('') // Matches your state name
+  const [username, setUsername] = useState('') 
   const [password, setPassword] = useState('')
   const [isSignUp, setIsSignUp] = useState(false)
   const [message, setMessage] = useState('')
@@ -91,17 +99,26 @@ export default function Auth() {
           /></div>
           
   
-          {/* Only show Email during Sign Up */}
-          {isSignUp && (
-            <input 
-              type="email"
-              placeholder="Email Address"
-              className="w-full p-3 rounded-[10px] border border-gray-600 focus:border-blue-500 outline-none"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          )}
+      
+      
+        {/* Only show Email during Sign Up */}
+<div className="relative group">
+  {isSignUp && (
+    <>
+      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+        <Mail className="h-5 w-5 text-primary-400 group-focus-within:text-accent-400 transition-colors" />
+      </div>
+      <input 
+        type="email"
+        placeholder="Email Address"
+        className="w-full p-3 rounded-[10px] pl-10 border border-gray-600 focus:border-blue-500 outline-none"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+    </>
+  )}
+</div>
            
 <div className="relative group">
       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -126,7 +143,7 @@ export default function Auth() {
             disabled={loading}
             className="w-full bg-accent-600 hover:bg-accent-500 p-3 rounded font-bold transition-all"
           >
-            {loading ? 'Processing...' : isSignUp ? 'Register for SuruChatto' : 'Log In'}
+            {loading ? 'Processing...' : isSignUp ? 'Register for SuruChat' : 'Log In'}
           </button>
         </form>
 
