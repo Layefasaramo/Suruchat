@@ -11,14 +11,14 @@ function Chatbox({
 }) {
   return (
     <div
-      className="flex flex-col h-full bg-primary-900/40 backdrop-blur-sm"
+      className="flex flex-col h-full overflow-hidden bg-primary-900/40 backdrop-blur-sm"
       style={{ backgroundImage: `url(${background})` }}
     >
-      <div className="flex-1 overflow-y-auto p-4 space-y-6">
+      <div className="flex-1 overflow-y-auto p-4 space-y-6 scrollbar-thin scrollbar-thumb-accent-600">
         {messages.map((m) => (
           <div
             key={m.id}
-            className={`max-w-[80%] p-4 rounded-2xl text-sm relative shadow-lg ${m.sender_id === session.user.id ? "bg-accent-600 ml-auto rounded-tr-none" : "bg-secondary border border-accent-600/20 rounded-tl-none"}`}
+            className={`max-w-[80%] p-4 rounded-2xl text-sm relative shadow-lg ${m.sender_id === session.user.id ? "bg-accent-600 ml-auto rounded-tr-none" : "bg-gray-600 border-accent-600/20  rounded-tl-xl"}`}
           >
             <div className="flex items-center gap-2 mb-2">
               <span className="flex items-center justify-center w-7 h-7 text-sm bg-primary-900 rounded-full border border-accent-400/50 shadow-neon">

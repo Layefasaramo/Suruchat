@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
+import toast from "react-hot-toast";
 
 function Userchat() {
   const [session, setSession] = useState(null);
@@ -144,8 +145,8 @@ function Userchat() {
         status: "pending",
       },
     ]);
-    if (error) alert("Already sent or error.");
-    else alert("Invite sent!");
+    if (error) toast.error("Already sent an invite to this user!");
+    else toast.success("Invite sent!");
   }
 
   async function acceptInvite(inviteId) {
@@ -204,7 +205,7 @@ function Userchat() {
     if (!error) {
       setSelectedIcon(icon);
       fetchUsers();
-      alert("Shinobi Icon Updated!");
+      toast.success("Shinobi Icon Updated!");
     }
   }
 
