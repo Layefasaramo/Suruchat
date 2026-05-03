@@ -11,7 +11,7 @@ function Chatbox({
 }) {
   return (
     <div
-      className="flex flex-col h-full overflow-hidden bg-primary-900/40 backdrop-blur-sm"
+      className="flex flex-col h-dvh overflow-hidden bg-primary-900/40 backdrop-blur-sm"
       style={{ backgroundImage: `url(${background})` }}
     >
       <div className="flex-1 overflow-y-auto p-4 space-y-6 scrollbar-thin scrollbar-thumb-accent-600">
@@ -36,7 +36,7 @@ function Chatbox({
       </div>
       <form
         onSubmit={handleSendMessage}
-        className="p-4 bg-secondary/80 border-t border-accent-600/30 flex gap-2"
+        className="p-4 bg-secondary/80 border-t border-accent-600/30 flex gap-2 shrink-0"
       >
         <input
           value={content}
@@ -46,7 +46,7 @@ function Chatbox({
         />
         <button
           type="submit"
-          className="bg-accent-600 hover:bg-accent-500 px-8 rounded-xl font-bold shadow-neon transition"
+          className="bg-accent-600 hover:bg-accent-500 px-8 rounded-xl font-bold shadow-neon transition shrink-0"
         >
           SEND
         </button>

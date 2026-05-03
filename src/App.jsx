@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div
-      className="flex flex-col h-screen bg-primary-900 text-white font-sans"
+      className="flex flex-col h-dvh  bg-primary-900 text-white font-sans"
       style={{ backgroundImage: `url(${background})` }}
     >
       <Toaster
