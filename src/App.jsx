@@ -5,7 +5,6 @@ import Chatbox from "./Chatbox";
 import Profile from "./Profile";
 import Auth from "./Auth";
 import background from "./assets/background.png";
-import { Toaster } from "react-hot-toast";
 
 function App() {
   const {
@@ -39,21 +38,6 @@ function App() {
       className="flex flex-col h-dvh  bg-primary-900 text-white font-sans"
       style={{ backgroundImage: `url(${background})` }}
     >
-      <Toaster
-        toastOptions={{
-          style: {
-            background: "#1a1a2e", // Match your primary-900
-            color: "#fff",
-            border: "1px solid #4ecca3", // Match your accent color
-          },
-          success: {
-            iconTheme: {
-              primary: "#4ecca3",
-              secondary: "#1a1a2e",
-            },
-          },
-        }}
-      />
       {/* The start  */}
       <Header
         view={view}

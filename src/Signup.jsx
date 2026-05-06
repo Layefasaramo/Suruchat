@@ -24,9 +24,10 @@ function Signup({ onToggleMode, setMessage }) {
     });
 
     if (error) {
-      toast.error(error.message);
+      toast.error(error.message || "Error signing up");
     } else if (data.user && data.session === null) {
       setMessage("Registration successful! Please check your email.");
+      toast.success("Registration successful!");
     }
     setLoading(false);
   };

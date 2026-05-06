@@ -27,7 +27,7 @@ function Login({ onToggleMode, setMessage }) {
       return;
     }
 
-    // 2. Sign in using the email we just found
+    // 2. Sign in using the email it just found
     const { error: loginError } = await supabase.auth.signInWithPassword({
       email: profile.email,
       password: password,
